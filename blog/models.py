@@ -5,3 +5,6 @@ class Post(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     body = models.TextField()
     posted = models.DateField(auto_now=True)
+
+    def __unicode__(self):
+        return self.title
