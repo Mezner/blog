@@ -145,3 +145,5 @@ LOGGING = {
         },
     }
 }
+
+TINYMCE_DEFAULT_CONFIG = {'theme': "advanced", 'relative_urls': False}
