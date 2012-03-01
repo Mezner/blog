@@ -1,1 +1,3 @@
+django-staticfiles
+django-tinymce
 django-autoslug
