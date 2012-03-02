@@ -1,8 +1,13 @@
 <html>
 <body>
-<ul>
 {% for post in posts %}
-    <li><a href="/blog/{{ post.slug }}">{{ post }}</a></li>
+    <h1><a href="/blog/{{ post.slug }}">{{ post.title }}</a></h1>
+    <h3>{{ post.posted }}<h3>
+    <div>
+        {% autoescape off %}
+        {{ post.body }}
+        {% endautoescape %}
+    </div>
 {% endfor %}
 </ul>
 </body>
