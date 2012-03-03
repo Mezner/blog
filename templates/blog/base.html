@@ -4,6 +4,14 @@
 </head>
     <body>
         <h1>Russell Myers - programming, etc.</h1>
+        <div class="recent-posts">
+            <h2>Recent</h2>
+            <ul>
+            {% for post in posts %}
+                <li><a href="/blog/{{ post.slug }}">{{ post.title }}</a></li>
+            {% endfor %}
+            </ul>
+        </div>
         {% block content %}{% endblock %}
     </body>
 </html>
