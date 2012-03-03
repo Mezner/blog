@@ -3,7 +3,7 @@ from blog.models import Post
 
 def index(request):
     return render_to_response('blog/index.html', {
-        'posts': Post.objects.all()
+        'posts': Post.objects.order_by('-posted')[:5]
     })
 
 def view_post(request, slug):
