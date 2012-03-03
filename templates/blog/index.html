@@ -4,12 +4,6 @@
 
 {% block content %}
 {% for post in posts %}
-    <h1><a href="/blog/{{ post.slug }}">{{ post.title }}</a></h1>
-    <h3>{{ post.posted }}<h3>
-    <div>
-        {% autoescape off %}
-        {{ post.body }}
-        {% endautoescape %}
-    </div>
+{% include "blog/includes/post.html" %}
 {% endfor %}
 {% endblock %}
