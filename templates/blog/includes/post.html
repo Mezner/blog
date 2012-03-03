@@ -1,5 +1,5 @@
     <div class="post">
-        <h1><a href="/blog/{{ post.slug }}"/>{{ post.title }}</a></h1>
+        <h2><a href="/blog/{{ post.slug }}"/>{{ post.title }}</a></h2>
         <h3>{{ post.posted }}</h3>
         <div class="body">
             {% autoescape off %}{{ post.body }}{% endautoescape %}
