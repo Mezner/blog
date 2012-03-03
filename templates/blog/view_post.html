@@ -1,5 +1,8 @@
-<html>
-<body>
+{% extends "blog/base.html" %}
+
+{% block title %}Russell Myers - {{ post.title }}{% endblock %}
+
+{% block content %}
     <h1>{{ post.title }}</h1>
     <h3>{{ post.posted }}</h3>
     <div>
@@ -7,5 +10,4 @@
     {{ post.body }}
     {% endautoescape %}
     </div>
-</body>
-</html>
+{% endblock %}
