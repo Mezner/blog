@@ -4,6 +4,11 @@ html {
     padding:0;
     color:#000;
 }
+a:link, a:visited, a:hover, a:active
+{
+    color:#144d0b;
+    text-decoration: none;
+}
 #wrap
 {
     margin: 0 auto;
