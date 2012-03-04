@@ -4,10 +4,14 @@ html {
     padding:0;
     color:#000;
 }
+#wrap
+{
+    width: 850px;
+}
 /* Header styles */
 div.header
 {
-    width: 100%;
+    width: 850px;
 }
 div.header img.logo
 {
@@ -25,4 +29,5 @@ div.nav
 div.main
 {
     float: right;
+    width: 600px;
 }

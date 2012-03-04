@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{% get_static_prefix %}styles/styles.css" type="text/css" />
 </head>
     <body>
+	<div id="wrap">
         <div class="header">
             <img src="{% get_static_prefix %}images/logo.gif" class="logo"/>
         </div>
@@ -19,5 +20,6 @@
         <div class="main">
         {% block content %}{% endblock %}
         </div>
+	</div>
     </body>
 </html>
