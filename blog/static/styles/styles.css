@@ -14,6 +14,12 @@ a:link, a:visited, a:hover, a:active
     margin: 0 auto;
     width: 850px;
 }
+/* Gist */
+.gist{font-size:13px;line-height:18px;margin-bottom:20px;width:100%}
+.gist pre{font-family:Menlo,Monaco,'Bitstream Vera Sans Mono','Courier New',monospace !important}
+.gist-meta{font-family:Helvetica,Arial,sans-serif;font-size:10px !important}
+.gist-meta a{color:#144d0b !important;text-decoration:none}
+.gist-meta a:hover{color:#144d0b !important}
 /* Header styles */
 div.header
 {
