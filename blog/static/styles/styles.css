@@ -6,17 +6,19 @@ html {
 }
 #wrap
 {
+    margin: 0 auto;
     width: 850px;
 }
 /* Header styles */
 div.header
 {
+    margin: 10 0;
     width: 850px;
 }
 div.header img.logo
 {
-    width: 130px;
-    height: 130px;
+    width: 125px;
+    height: 81px;
 }
 
 /* Nav styles */
