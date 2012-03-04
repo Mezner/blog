@@ -1,10 +1,14 @@
+{% load static %}
 <html>
 <head>
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% get_static_prefix %}styles/styles.css" type="text/css" />
 </head>
     <body>
-        <h1>Russell Myers - programming, etc.</h1>
-        <div class="recent-posts">
+        <div class="header">
+            <img src="{% get_static_prefix %}images/logo.gif" class="logo"/>
+        </div>
+        <div class="nav">
             <h2>Recent</h2>
             <ul>
             {% for post in posts %}
@@ -12,6 +16,8 @@
             {% endfor %}
             </ul>
         </div>
+        <div class="main">
         {% block content %}{% endblock %}
+        </div>
     </body>
 </html>

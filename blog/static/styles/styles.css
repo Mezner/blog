@@ -1,0 +1,28 @@
+body,
+html {
+    margin:0;
+    padding:0;
+    color:#000;
+}
+/* Header styles */
+div.header
+{
+    width: 100%;
+}
+div.header img.logo
+{
+    width: 130px;
+    height: 130px;
+}
+
+/* Nav styles */
+div.nav
+{
+    float: left;
+    width: 250px;
+}
+/* Main styles */
+div.main
+{
+    float: right;
+}
