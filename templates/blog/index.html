@@ -5,5 +5,8 @@
 {% block content %}
 {% for post in posts %}
 {% include "blog/includes/post.html" %}
+{% with total=post.comment_set.all.count %}
+<a href="/blog/{{ post.slug }}#comments">{{ total }} Comment{{ total|pluralize }}</a>
+{% endwith %}
 {% endfor %}
 {% endblock %}
