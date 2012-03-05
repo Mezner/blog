@@ -5,6 +5,7 @@
 {% block content %}
 {% include "blog/includes/post.html" %}
 <div class="comments">
+    <a name="comments" />
     <h3>Comments</h3>
     {% for comment in post.comment_set.all %}
     <div class="comment">
