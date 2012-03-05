@@ -14,9 +14,8 @@ class Post(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(Post)
     username = models.CharField(max_length=50)
-    location_name = models.CharField(max_length=50)
-    location_url = models.URLField()
-    body = tinymce_models.HTMLField()
+    user_url = models.URLField()
+    body = models.TextField()
     posted = models.DateField(auto_now=True)
 
     def __unicode__(self):
