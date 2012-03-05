@@ -1,3 +1,4 @@
 django-staticfiles
 django-tinymce
 django-autoslug
+recaptcha-client
