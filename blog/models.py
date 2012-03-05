@@ -10,3 +10,15 @@ class Post(models.Model):
 
     def __unicode__(self):
         return self.title
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post)
+    username = models.CharField(max_length=50)
+    location_name = models.CharField(max_length=50)
+    location_url = models.URLField()
+    body = tinymce_models.HTMLField()
+    posted = models.DateField(auto_now=True)
+
+    def __unicode__(self):
+        return 'Post by %(username)s on %(posted)s' %\
+        { "username" : self.username, "posted": self.posted }
