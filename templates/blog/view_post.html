@@ -17,6 +17,10 @@
             <input type="hidden" name="recaptcha_response_field"
                 value="manual_challenge">
         </noscript>
+        <p><label for="username">Username:</label> <input type="text" id="username" name="username" /></p>
+        <p><label for="url">URL:</label> <input type="text" id="url" name="url" /></p>
+        <p><label for="comment">Comment:</label> <textarea cols="70" rows="10" id="comment" name="comment"></textarea></p>
+        <p><input type="submit" value="Submit" /></p>
     </form>
     {% for comment in post.comment_set.all %}
     <div class="comment">
