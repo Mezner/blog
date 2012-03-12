@@ -7,6 +7,17 @@
 <div class="comments">
     <a name="comments" />
     <h3>Comments</h3>
+    <form action="" method="post">
+        <script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6Lcizc4SAAAAAPwp24_mSCgWLVHMvi8SHr_lTY-e">
+        </script>
+        <noscript>
+            <iframe src="http://www.google.com/recaptcha/api/noscript?k=6Lcizc4SAAAAAPwp24_mSCgWLVHMvi8SHr_lTY-e"
+                height="300" width="500" frameborder="0"></iframe><br>
+            <textarea name="recaptcha_challenge_field" rows="3" cols="40"/>
+            <input type="hidden" name="recaptcha_response_field"
+                value="manual_challenge">
+        </noscript>
+    </form>
     {% for comment in post.comment_set.all %}
     <div class="comment">
         <div class="body">
