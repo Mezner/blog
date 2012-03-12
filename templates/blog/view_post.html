@@ -7,7 +7,7 @@
 <div class="comments">
     <a name="comments" />
     <h3>Comments</h3>
-    <form action="" method="post">
+    <form action="/blog/{{ post.slug }}/comment" method="post">{% csrf_token %}
         <script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6Lcizc4SAAAAAPwp24_mSCgWLVHMvi8SHr_lTY-e">
         </script>
         <noscript>
