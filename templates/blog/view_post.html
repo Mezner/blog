@@ -7,20 +7,9 @@
 <div class="comments">
     <a name="comments" />
     <h3>Comments</h3>
-    <form action="/blog/{{ post.slug }}/comment" method="post">{% csrf_token %}
-        <script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6Lcizc4SAAAAAPwp24_mSCgWLVHMvi8SHr_lTY-e">
-        </script>
-        <noscript>
-            <iframe src="http://www.google.com/recaptcha/api/noscript?k=6Lcizc4SAAAAAPwp24_mSCgWLVHMvi8SHr_lTY-e"
-                height="300" width="500" frameborder="0"></iframe><br>
-            <textarea name="recaptcha_challenge_field" rows="3" cols="40"/>
-            <input type="hidden" name="recaptcha_response_field"
-                value="manual_challenge">
-        </noscript>
-        <p><label for="username">Username:</label> <input type="text" id="username" name="username" /></p>
-        <p><label for="url">URL:</label> <input type="text" id="url" name="url" /></p>
-        <p><label for="comment">Comment:</label> <textarea cols="70" rows="10" id="comment" name="comment"></textarea></p>
-        <p><input type="submit" value="Submit" /></p>
+    <form action="/blog/add-comment/{{ post.slug }}" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" />
     </form>
     {% for comment in post.comment_set.all %}
     <div class="comment">
