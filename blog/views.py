@@ -20,10 +20,10 @@ def view_post(request, slug):
 def add_comment(request, slug):
     if request.method == 'POST':
         response = captcha.submit(
-            request.args['recaptcha_challenge_field'],
-            request.args['recaptcha_response_field'],
+            request.POST['recaptcha_challenge_field'],
+            request.POST['recaptcha_response_field'],
             settings.RECAPTCHA_PRIVATE_KEY,
-            request.remote_addr)
+            request.META["REMOTE_ADDR"])
         if response.is_valid:
             return HttpResponse('form is valid')
         return HttpResponse('form is not valid')
