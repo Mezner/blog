@@ -1,9 +1,9 @@
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.http import HttpResponse
+from django.conf import settings
 from blog.models import Post
-from blog.forms import CommentForm
-from recaptcha_works.decorators import fix_recaptcha_remote_ip
+from recaptcha.client import captcha
 
 def index(request):
     return render_to_response('blog/index.html', {
@@ -11,22 +11,21 @@ def index(request):
     })
 
 def view_post(request, slug):
-    form = CommentForm()
     return render_to_response('blog/view_post.html',
     context_instance = RequestContext(request, {
-        'form': form,
         'post': get_object_or_404(Post, slug=slug),
         'posts': Post.objects.order_by('-posted')[:10]
     }))
 
-@fix_recaptcha_remote_ip
 def add_comment(request, slug):
     if request.method == 'POST':
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            post = get_object_or_404(Post, slug=slug)
-            return HttpResponse('stuff')
-        else:
-            return HttpResponse('form is not valid')
+        response = captcha.submit(
+            request.args['recaptcha_challenge_field'],
+            request.args['recaptcha_response_field'],
+            settings.RECAPTCHA_PRIVATE_KEY,
+            request.remote_addr)
+        if response.is_valid:
+            return HttpResponse('form is valid')
+        return HttpResponse('form is not valid')
     else:
-        return HttpResponse('not a post')
+        return HttpResponseBadRequest()

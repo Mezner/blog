@@ -9,10 +9,10 @@
     <h3>Comments</h3>
     <form action="/blog/add-comment/{{ post.slug }}" method="post">{% csrf_token %}
         <script type="text/javascript"
-            src="http://www.google.com/recaptcha/api/challenge?k=your_public_key">
+            src="http://www.google.com/recaptcha/api/challenge?k=6LcPXM8SAAAAAESXZum6DPHPPuYC46TmsFZoDSgD">
         </script>
         <noscript>
-            <iframe src="http://www.google.com/recaptcha/api/noscript?k=your_public_key"
+            <iframe src="http://www.google.com/recaptcha/api/noscript?k=6LcPXM8SAAAAAESXZum6DPHPPuYC46TmsFZoDSgD"
                 height="300" width="500" frameborder="0"></iframe><br>
             <textarea name="recaptcha_challenge_field" rows="3" cols="40">
             </textarea>
