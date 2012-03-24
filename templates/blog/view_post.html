@@ -19,6 +19,12 @@
             <input type="hidden" name="recaptcha_response_field"
                 value="manual_challenge">
         </noscript>
+        <p><label for="nameField">Name: </label> <input type="text" id="nameField" size="40" maxlength="120"/></p>
+        <p><label for="locationField">URL: </label> <input type="text" id="locationField" size="40" maxlength="120"/></p>
+        <p>
+            <label for="bodyField">Comment: </label> <br />
+            <textarea id="bodyField" rows="8" cols="70"></textarea>
+        </p>
         <input type="submit" value="Submit" />
     </form>
     {% for comment in post.comment_set.all %}
