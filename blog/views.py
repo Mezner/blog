@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.http import HttpResponse
 from django.conf import settings
-from blog.models import Post
+from blog.models import Post, Comment
 from recaptcha.client import captcha
 
 def index(request):
@@ -25,6 +25,12 @@ def add_comment(request, slug):
             settings.RECAPTCHA_PRIVATE_KEY,
             request.META["REMOTE_ADDR"])
         if response.is_valid:
+            post = get_object_or_404(Post, slug=slug)
+            post.comment_set.create(
+                username = request.POST['username_field'],
+                user_url = request.POST['user_url_field'],
+                body = request.POST['body_field']
+            )
             return HttpResponse('form is valid')
         return HttpResponse('form is not valid')
     else:
