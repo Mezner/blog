@@ -49,6 +49,10 @@ div.nav
     padding-left: 0px;
     padding-bottom: 7px;
 }
+.nav img
+{
+    padding-top:20px;
+}
 /* Main styles */
 div.main
 {

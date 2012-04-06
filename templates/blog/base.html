@@ -28,6 +28,7 @@
                 <li><a href="/blog/{{ post.slug }}">{{ post.title }}</a></li>
             {% endfor %}
             </ul>
+            <a href="/blog/feed"><img src="{% get_static_prefix %}images/rss.png"/></a>
         </div>
         <div class="main">
         {% block content %}{% endblock %}
